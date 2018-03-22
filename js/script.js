@@ -26,7 +26,8 @@ var prompts = [
   "Tackle something else for a while and let this one simmer",
   "What would the smartest person you know do?",
   "What would your boss want you to do?",
-  "Are you hungry? Maybe get a snack"
+  "Are you hungry? Maybe get a snack",
+  "Think bigger"
 ];
 
 var app = new Vue({
