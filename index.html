@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Duck</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <div id='content'>
+    <div id='container'>
+      <div id='prompt'>{{ prompt }}</div>
+      <div id='duck' v-on:click="updatePrompt" v-on:shake="updatePrompt">
+        <img src='img/duck.png' />
+      </div>
+    </div>
+
+    <div id='wtf' v-bind:class="{ hidden: overlayIsHidden }" >
+      <p>Magic Duck combines the powers of a <a href='https://en.wikipedia.org/wiki/Magic_8-Ball'>Magic 8-Ball</a> and a <a href='https://en.wikipedia.org/wiki/Rubber_duck_debugging'>rubber duck</a> to help your solve all your problems.</p>
+      <p>Explain your problem to the duck. Click the duck or shake your phone for a prompt.</p>
+    </div>
+
+    <div id='footer' v-on:click="toggleOverlay">?</div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/shake.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

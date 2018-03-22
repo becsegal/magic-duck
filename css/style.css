@@ -1,0 +1,53 @@
+body{
+  padding: 0;
+  margin: 10px 0 0 0;
+  background: #ffeead;
+  color: #9b7b00;
+  font-family: 'Domine', serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#container > * {
+  padding: 5px;
+}
+
+#duck {
+  max-width: 80%;
+}
+#duck > img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 5px 12px;
+  background: #9b7b00;
+  color: #ffeead;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.hidden {
+  visibility: hidden
+}
+#wtf {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 25px;
+  border: 5px solid #9b7b00;
+  padding: 20px;
+  opacity: 0.8;
+}
