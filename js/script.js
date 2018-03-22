@@ -10,8 +10,13 @@ var prompts = [
   "Just stop. Try it.",
   "How have people solved similar problems?",
   "How does it work now?",
-  "How can you be sure?", 
-  "*Nods thoughtfully*"
+  "Are you sure about that?", 
+  "*Nods thoughtfully*", 
+  "What is happening now?",
+  "What should be happening?",
+  "Describe the problem in 1 sentence",
+  "What are some more options?",
+  "Go on..."
 ];
 
 var app = new Vue({
