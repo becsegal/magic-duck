@@ -9,7 +9,9 @@ var prompts = [
   "What if you had half the time?",
   "Just stop. Try it.",
   "How have people solved similar problems?",
-  "How does it work now?"
+  "How does it work now?",
+  "How can you be sure?", 
+  "*Nods thoughtfully*"
 ];
 
 var app = new Vue({
