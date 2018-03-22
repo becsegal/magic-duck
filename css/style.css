@@ -1,6 +1,6 @@
 body{
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   background: #ffeead;
   color: #9b7b00;
   font-family: 'Domine', serif;
@@ -13,7 +13,7 @@ body{
   align-items: center;
 }
 #container > * {
-  padding: 5px;
+  margin: 10px;
 }
 
 #duck {
