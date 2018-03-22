@@ -19,7 +19,11 @@ var prompts = [
   "A 20 minute walk could clear your head",
   "That sounds difficult", 
   "I believe in you",
-  "What does Google say on the subject?"
+  "What does Google say on the subject?",
+  "What's the use case?",
+  "What are you leaning toward?",
+  "Is this a priority?",
+  "Tackle something else for a while and let this one simmer"
 ];
 
 var app = new Vue({
