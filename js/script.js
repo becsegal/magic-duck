@@ -2,14 +2,13 @@ var prompts = [
   "But what if you didn't?",
   "What have you found so far?",
   "What have you tried already?",
-  "What has happened in your previous attempts?",
   "Explain it again a different way",
   "List your assumptions",
-  "Try working through it from a different direction",
+  "Try working through it in reverse",
   "Explain it like I'm 5",
   "What if you had half the time?",
   "Just stop. Try it.",
-  "How have other people solved similar problems?",
+  "How have people solved similar problems?",
   "How does it work now?"
 ];
 
