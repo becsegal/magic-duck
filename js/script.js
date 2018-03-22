@@ -16,14 +16,14 @@ var app = new Vue({
   el: '#content',
   data: {
     prompt: "What's up? - Duck",
-    overlayIsHidden: true
+    overlayIsVisible: false
   },
   methods: {
     updatePrompt: function () {
       this.prompt = prompts[Math.floor(Math.random() * prompts.length)]
     },
     toggleOverlay: function () {
-      this.overlayIsHidden = !this.overlayIsHidden
+      this.overlayIsVisible = !this.overlayIsVisible;
     }
   }
 });
