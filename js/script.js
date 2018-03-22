@@ -9,14 +9,17 @@ var prompts = [
   "What if you had half the time?",
   "Just stop. Try it.",
   "How have people solved similar problems?",
-  "How does it work now?",
   "Are you sure about that?", 
   "*Nods thoughtfully*", 
   "What is happening now?",
   "What should be happening?",
   "Describe the problem in 1 sentence",
   "What are some more options?",
-  "Go on..."
+  "Go on...",
+  "A 20 minute walk could clear your head",
+  "That sounds difficult", 
+  "I believe in you",
+  "What does Google say on the subject?"
 ];
 
 var app = new Vue({
