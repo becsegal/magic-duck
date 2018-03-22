@@ -35,5 +35,5 @@ var shakeDetector = new Shake({
 shakeDetector.start();
 window.addEventListener('shake', shakeEventDidOccur, false);
 function shakeEventDidOccur () {
-  app.toggleOverlay();
+  app.updatePrompt();
 }
