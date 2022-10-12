@@ -8,6 +8,7 @@ body{
 }
 
 #prompt {
+  box-sizing: border-box;
   width: 80%;
   padding: 30px; 
   border: 10px solid black;
