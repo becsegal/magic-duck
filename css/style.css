@@ -70,8 +70,9 @@ body{
   z-index: 1000;
 }
 #wtf {
+  box-sizing: border-box;
   position: fixed;
-  width: 70%;
+  width: 50%;
   bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -81,5 +82,9 @@ body{
   border: 10px solid black;
   padding: 20px;
   display: none;
-  z-index: 1000;
+  text-align: left;
+}
+
+a { 
+  color: black
 }
