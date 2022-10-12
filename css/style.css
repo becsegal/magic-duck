@@ -72,12 +72,10 @@ body{
 #wtf {
   box-sizing: border-box;
   position: fixed;
-  width: 50%;
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background: white;
+  left: 0;
+  width: 70%;
+  background: orange;
   border-radius: 25px;
   border: 10px solid black;
   padding: 20px;

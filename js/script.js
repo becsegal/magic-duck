@@ -45,6 +45,5 @@ $("#duck").on( "click", function() {
 });
 
 $("#footer").on( "click", function() {
-    console.log("footer");
     $("#wtf").toggle();
 });
