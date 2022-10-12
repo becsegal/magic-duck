@@ -1,25 +1,56 @@
-# Magic Duck
+# magic-duck
 
-## What?
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
-Stuck? Need someone to help you through a sticky problem? [Talk to the magic duck!](https://becsegal.github.io/magic-duck/)
+## Prerequisites
 
-Magic Duck combines the powers of a [Magic 8-Ball](https://en.wikipedia.org/wiki/Magic_8-Ball) and a [rubber duck](https://en.wikipedia.org/wiki/Rubber_duck_debugging) to help your solve all your problems.
+You will need the following things properly installed on your computer.
 
-Explain your problem to the duck. Click on the duck or shake your phone and the duck will guide you to a solution of your own making.
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://cli.emberjs.com/release/)
+* [Google Chrome](https://google.com/chrome/)
 
-## Why?
+## Installation
 
-Why not? To try vue. Try try and fail to draw a rubber duck with css or canvas or something. To give this gift to the world.
+* `git clone <repository-url>` this repository
+* `cd magic-duck`
+* `npm install`
 
-## When?
+## Running / Development
 
-[:clock3: :eyes:](https://github.com/becsegal/magic-duck/commits/master)
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-## Where?
+### Code Generators
 
-NYC
+Make use of the many generators for code, try `ember help generate` for more details
 
-## Who?
+### Running Tests
 
-@becsegal
+* `ember test`
+* `ember test --server`
+
+### Linting
+
+* `npm run lint`
+* `npm run lint:fix`
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+* [ember.js](https://emberjs.com/)
+* [ember-cli](https://cli.emberjs.com/release/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

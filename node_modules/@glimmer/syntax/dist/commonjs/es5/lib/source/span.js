@@ -1,0 +1,22 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "SourceSpan", {
+  enumerable: true,
+  get: function () {
+    return _span.SourceSpan;
+  }
+});
+Object.defineProperty(exports, "SourceOffset", {
+  enumerable: true,
+  get: function () {
+    return _offset.SourceOffset;
+  }
+});
+
+var _span = require("./loc/span");
+
+var _offset = require("./loc/offset");
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3N5bnRheC9saWIvc291cmNlL3NwYW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7O0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBTb3VyY2VTcGFuLCBTZXJpYWxpemVkU291cmNlU3BhbiB9IGZyb20gJy4vbG9jL3NwYW4nO1xuZXhwb3J0IHsgU291cmNlT2Zmc2V0IH0gZnJvbSAnLi9sb2Mvb2Zmc2V0JztcbiJdLCJzb3VyY2VSb290IjoiIn0=

@@ -1,0 +1,2 @@
+export var Loader = function Loader() {};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3N5bnRheC9saWIvdjItYS9zZXJpYWxpemUvbG9hZC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxXQUFNLE1BQU4iLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgTG9hZGVyIHt9XG4iXSwic291cmNlUm9vdCI6IiJ9

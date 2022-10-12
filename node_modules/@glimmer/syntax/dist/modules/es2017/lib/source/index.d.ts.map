@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../../packages/@glimmer/syntax/lib/source/index.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,qBAAqB,EACrB,cAAc,EACd,cAAc,EACd,gBAAgB,EAChB,kBAAkB,GACnB,MAAM,YAAY,CAAC;AACpB,OAAO,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAClC,OAAO,EAAE,QAAQ,EAAE,QAAQ,EAAE,OAAO,EAAE,GAAG,EAAE,aAAa,EAAE,kBAAkB,EAAE,MAAM,aAAa,CAAC"}

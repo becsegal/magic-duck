@@ -1,0 +1,42 @@
+{
+  "name": "ember-cli-test-loader",
+  "version": "3.0.0",
+  "description": "Test loader for Ember CLI projects.",
+  "main": "index.js",
+  "engines": {
+    "node": "10.* || >= 12"
+  },
+  "scripts": {
+    "changelog": "lerna-changelog",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ember-cli/ember-cli-test-loader.git"
+  },
+  "keywords": [
+    "ember-addon"
+  ],
+  "author": "Robert Jackson <robert.w.jackson@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ember-cli/ember-cli-test-loader/issues"
+  },
+  "homepage": "https://github.com/ember-cli/ember-cli-test-loader#readme",
+  "dependencies": {
+    "ember-cli-babel": "^7.13.2"
+  },
+  "devDependencies": {
+    "lerna-changelog": "^0.8.3"
+  },
+  "changelog": {
+    "repo": "ember-cli/ember-cli-test-loader",
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    }
+  }
+}

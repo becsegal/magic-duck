@@ -1,0 +1,29 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.emptyArray = emptyArray;
+exports.isEmptyArray = isEmptyArray;
+exports.EMPTY_NUMBER_ARRAY = exports.EMPTY_STRING_ARRAY = exports.EMPTY_ARRAY = void 0;
+const EMPTY_ARRAY = Object.freeze([]);
+exports.EMPTY_ARRAY = EMPTY_ARRAY;
+
+function emptyArray() {
+  return EMPTY_ARRAY;
+}
+
+const EMPTY_STRING_ARRAY = emptyArray();
+exports.EMPTY_STRING_ARRAY = EMPTY_STRING_ARRAY;
+const EMPTY_NUMBER_ARRAY = emptyArray();
+/**
+ * This function returns `true` if the input array is the special empty array sentinel,
+ * which is sometimes used for optimizations.
+ */
+
+exports.EMPTY_NUMBER_ARRAY = EMPTY_NUMBER_ARRAY;
+
+function isEmptyArray(input) {
+  return input === EMPTY_ARRAY;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3V0aWwvbGliL2FycmF5LXV0aWxzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQU8sTUFBTSxXQUFXLEdBQXVCLE1BQU0sQ0FBTixNQUFBLENBQXhDLEVBQXdDLENBQXhDOzs7QUFFRCxTQUFBLFVBQUEsR0FBb0I7QUFDeEIsU0FBQSxXQUFBO0FBQ0Q7O0FBRU0sTUFBTSxrQkFBa0IsR0FBRyxVQUEzQixFQUFBOztBQUNBLE1BQU0sa0JBQWtCLEdBQUcsVUFBM0IsRUFBQTtBQUVQOzs7Ozs7O0FBSU0sU0FBQSxZQUFBLENBQUEsS0FBQSxFQUE0RDtBQUNoRSxTQUFPLEtBQUssS0FBWixXQUFBO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgRU1QVFlfQVJSQVk6IHJlYWRvbmx5IHVua25vd25bXSA9IE9iamVjdC5mcmVlemUoW10pIGFzIHJlYWRvbmx5IHVua25vd25bXTtcblxuZXhwb3J0IGZ1bmN0aW9uIGVtcHR5QXJyYXk8VCBleHRlbmRzIHVua25vd24+KCk6IFRbXSB7XG4gIHJldHVybiBFTVBUWV9BUlJBWSBhcyBUW107XG59XG5cbmV4cG9ydCBjb25zdCBFTVBUWV9TVFJJTkdfQVJSQVkgPSBlbXB0eUFycmF5PHN0cmluZz4oKTtcbmV4cG9ydCBjb25zdCBFTVBUWV9OVU1CRVJfQVJSQVkgPSBlbXB0eUFycmF5PG51bWJlcj4oKTtcblxuLyoqXG4gKiBUaGlzIGZ1bmN0aW9uIHJldHVybnMgYHRydWVgIGlmIHRoZSBpbnB1dCBhcnJheSBpcyB0aGUgc3BlY2lhbCBlbXB0eSBhcnJheSBzZW50aW5lbCxcbiAqIHdoaWNoIGlzIHNvbWV0aW1lcyB1c2VkIGZvciBvcHRpbWl6YXRpb25zLlxuICovXG5leHBvcnQgZnVuY3Rpb24gaXNFbXB0eUFycmF5KGlucHV0OiB1bmtub3duW10gfCByZWFkb25seSB1bmtub3duW10pOiBib29sZWFuIHtcbiAgcmV0dXJuIGlucHV0ID09PSBFTVBUWV9BUlJBWTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=

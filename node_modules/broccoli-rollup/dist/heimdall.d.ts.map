@@ -1,0 +1,1 @@
+{"version":3,"file":"heimdall.d.ts","sourceRoot":"","sources":["../src/heimdall.ts"],"names":[],"mappings":"AACA,QAAA,MAAM,QAAQ,EAAE;IACd,KAAK,CAAC,KAAK,EAAE,MAAM,GAAG;QAAE,IAAI,IAAI,IAAI,CAAA;KAAE,CAAC;CAChB,CAAC;AAE1B,OAAO,EAAE,QAAQ,EAAE,CAAC"}

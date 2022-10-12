@@ -1,0 +1,45 @@
+export * from './lib/array-utils';
+export { default as assert, deprecate } from './lib/assert';
+export { dict, isDict, isObject, StackImpl as Stack } from './lib/collections';
+export * from './lib/dom';
+export { isSerializationFirstNode, SERIALIZATION_FIRST_NODE_STRING } from './lib/is-serialization-first-node';
+export { assign, fillNulls, values } from './lib/object-utils';
+export * from './lib/platform-utils';
+export * from './lib/string';
+export * from './lib/immediate';
+export * from './lib/template';
+export { default as _WeakSet } from './lib/weak-set';
+export { castToSimple, castToBrowser, checkNode } from './lib/simple-cast';
+export * from './lib/present';
+export { default as intern } from './lib/intern';
+export { default as buildUntouchableThis } from './lib/untouchable-this';
+export { default as debugToString } from './lib/debug-to-string';
+export { beginTestSteps, endTestSteps, logStep, verifySteps } from './lib/debug-steps';
+/**
+ * This constant exists to make it easier to differentiate normal logs from
+ * errant console.logs. LOCAL_LOGGER should only be used inside a
+ * LOCAL_SHOULD_LOG check.
+ *
+ * It does not alleviate the need to check LOCAL_SHOULD_LOG, which is used
+ * for stripping.
+ */
+
+export var LOCAL_LOGGER = console;
+/**
+ * This constant exists to make it easier to differentiate normal logs from
+ * errant console.logs. LOGGER can be used outside of LOCAL_SHOULD_LOG checks,
+ * and is meant to be used in the rare situation where a console.* call is
+ * actually appropriate.
+ */
+
+export var LOGGER = console;
+export function assertNever(value, desc) {
+  if (desc === void 0) {
+    desc = 'unexpected unreachable branch';
+  }
+
+  LOGGER.log('unreachable', value);
+  LOGGER.log(desc + " :: " + JSON.stringify(value) + " (" + value + ")");
+  throw new Error("code reached unreachable");
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3V0aWwvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsY0FBQSxtQkFBQTtBQUNBLFNBQVMsT0FBTyxJQUFoQixNQUFBLEVBQUEsU0FBQSxRQUFBLGNBQUE7QUFDQSxTQUFBLElBQUEsRUFBQSxNQUFBLEVBQUEsUUFBQSxFQUFpQyxTQUFTLElBQTFDLEtBQUEsUUFBQSxtQkFBQTtBQUNBLGNBQUEsV0FBQTtBQUNBLFNBQUEsd0JBQUEsRUFBQSwrQkFBQSxRQUFBLG1DQUFBO0FBSUEsU0FBQSxNQUFBLEVBQUEsU0FBQSxFQUFBLE1BQUEsUUFBQSxvQkFBQTtBQUNBLGNBQUEsc0JBQUE7QUFDQSxjQUFBLGNBQUE7QUFDQSxjQUFBLGlCQUFBO0FBQ0EsY0FBQSxnQkFBQTtBQUNBLFNBQVMsT0FBTyxJQUFoQixRQUFBLFFBQUEsZ0JBQUE7QUFDQSxTQUFBLFlBQUEsRUFBQSxhQUFBLEVBQUEsU0FBQSxRQUFBLG1CQUFBO0FBQ0EsY0FBQSxlQUFBO0FBQ0EsU0FBUyxPQUFPLElBQWhCLE1BQUEsUUFBQSxjQUFBO0FBRUEsU0FBUyxPQUFPLElBQWhCLG9CQUFBLFFBQUEsd0JBQUE7QUFDQSxTQUFTLE9BQU8sSUFBaEIsYUFBQSxRQUFBLHVCQUFBO0FBQ0EsU0FBQSxjQUFBLEVBQUEsWUFBQSxFQUFBLE9BQUEsRUFBQSxXQUFBLFFBQUEsbUJBQUE7QUFJQTs7Ozs7Ozs7O0FBUUEsT0FBTyxJQUFNLFlBQVksR0FBbEIsT0FBQTtBQUVQOzs7Ozs7O0FBTUEsT0FBTyxJQUFNLE1BQU0sR0FBWixPQUFBO0FBRVAsT0FBTSxTQUFBLFdBQUEsQ0FBQSxLQUFBLEVBQW9DLElBQXBDLEVBQTBFO0FBQUEsTUFBdEMsSUFBc0M7QUFBdEMsSUFBQSxJQUFzQyxHQUExRSwrQkFBMEU7QUFBQTs7QUFDOUUsRUFBQSxNQUFNLENBQU4sR0FBQSxDQUFBLGFBQUEsRUFBQSxLQUFBO0FBQ0EsRUFBQSxNQUFNLENBQU4sR0FBQSxDQUFjLElBQWQsWUFBeUIsSUFBSSxDQUFKLFNBQUEsQ0FBQSxLQUFBLENBQXpCLFVBQUEsS0FBQTtBQUVBLFFBQU0sSUFBTixLQUFNLDRCQUFOO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgKiBmcm9tICcuL2xpYi9hcnJheS11dGlscyc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIGFzc2VydCwgZGVwcmVjYXRlIH0gZnJvbSAnLi9saWIvYXNzZXJ0JztcbmV4cG9ydCB7IGRpY3QsIGlzRGljdCwgaXNPYmplY3QsIFN0YWNrSW1wbCBhcyBTdGFjayB9IGZyb20gJy4vbGliL2NvbGxlY3Rpb25zJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL2RvbSc7XG5leHBvcnQge1xuICBpc1NlcmlhbGl6YXRpb25GaXJzdE5vZGUsXG4gIFNFUklBTElaQVRJT05fRklSU1RfTk9ERV9TVFJJTkcsXG59IGZyb20gJy4vbGliL2lzLXNlcmlhbGl6YXRpb24tZmlyc3Qtbm9kZSc7XG5leHBvcnQgeyBhc3NpZ24sIGZpbGxOdWxscywgdmFsdWVzIH0gZnJvbSAnLi9saWIvb2JqZWN0LXV0aWxzJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3BsYXRmb3JtLXV0aWxzJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3N0cmluZyc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9pbW1lZGlhdGUnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvdGVtcGxhdGUnO1xuZXhwb3J0IHsgZGVmYXVsdCBhcyBfV2Vha1NldCB9IGZyb20gJy4vbGliL3dlYWstc2V0JztcbmV4cG9ydCB7IGNhc3RUb1NpbXBsZSwgY2FzdFRvQnJvd3NlciwgY2hlY2tOb2RlIH0gZnJvbSAnLi9saWIvc2ltcGxlLWNhc3QnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvcHJlc2VudCc7XG5leHBvcnQgeyBkZWZhdWx0IGFzIGludGVybiB9IGZyb20gJy4vbGliL2ludGVybic7XG5cbmV4cG9ydCB7IGRlZmF1bHQgYXMgYnVpbGRVbnRvdWNoYWJsZVRoaXMgfSBmcm9tICcuL2xpYi91bnRvdWNoYWJsZS10aGlzJztcbmV4cG9ydCB7IGRlZmF1bHQgYXMgZGVidWdUb1N0cmluZyB9IGZyb20gJy4vbGliL2RlYnVnLXRvLXN0cmluZyc7XG5leHBvcnQgeyBiZWdpblRlc3RTdGVwcywgZW5kVGVzdFN0ZXBzLCBsb2dTdGVwLCB2ZXJpZnlTdGVwcyB9IGZyb20gJy4vbGliL2RlYnVnLXN0ZXBzJztcblxuZXhwb3J0IHR5cGUgRklYTUU8VCwgUyBleHRlbmRzIHN0cmluZz4gPSAoVCAmIFMpIHwgVDtcblxuLyoqXG4gKiBUaGlzIGNvbnN0YW50IGV4aXN0cyB0byBtYWtlIGl0IGVhc2llciB0byBkaWZmZXJlbnRpYXRlIG5vcm1hbCBsb2dzIGZyb21cbiAqIGVycmFudCBjb25zb2xlLmxvZ3MuIExPQ0FMX0xPR0dFUiBzaG91bGQgb25seSBiZSB1c2VkIGluc2lkZSBhXG4gKiBMT0NBTF9TSE9VTERfTE9HIGNoZWNrLlxuICpcbiAqIEl0IGRvZXMgbm90IGFsbGV2aWF0ZSB0aGUgbmVlZCB0byBjaGVjayBMT0NBTF9TSE9VTERfTE9HLCB3aGljaCBpcyB1c2VkXG4gKiBmb3Igc3RyaXBwaW5nLlxuICovXG5leHBvcnQgY29uc3QgTE9DQUxfTE9HR0VSID0gY29uc29sZTtcblxuLyoqXG4gKiBUaGlzIGNvbnN0YW50IGV4aXN0cyB0byBtYWtlIGl0IGVhc2llciB0byBkaWZmZXJlbnRpYXRlIG5vcm1hbCBsb2dzIGZyb21cbiAqIGVycmFudCBjb25zb2xlLmxvZ3MuIExPR0dFUiBjYW4gYmUgdXNlZCBvdXRzaWRlIG9mIExPQ0FMX1NIT1VMRF9MT0cgY2hlY2tzLFxuICogYW5kIGlzIG1lYW50IHRvIGJlIHVzZWQgaW4gdGhlIHJhcmUgc2l0dWF0aW9uIHdoZXJlIGEgY29uc29sZS4qIGNhbGwgaXNcbiAqIGFjdHVhbGx5IGFwcHJvcHJpYXRlLlxuICovXG5leHBvcnQgY29uc3QgTE9HR0VSID0gY29uc29sZTtcblxuZXhwb3J0IGZ1bmN0aW9uIGFzc2VydE5ldmVyKHZhbHVlOiBuZXZlciwgZGVzYyA9ICd1bmV4cGVjdGVkIHVucmVhY2hhYmxlIGJyYW5jaCcpOiBuZXZlciB7XG4gIExPR0dFUi5sb2coJ3VucmVhY2hhYmxlJywgdmFsdWUpO1xuICBMT0dHRVIubG9nKGAke2Rlc2N9IDo6ICR7SlNPTi5zdHJpbmdpZnkodmFsdWUpfSAoJHt2YWx1ZX0pYCk7XG5cbiAgdGhyb3cgbmV3IEVycm9yKGBjb2RlIHJlYWNoZWQgdW5yZWFjaGFibGVgKTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0=

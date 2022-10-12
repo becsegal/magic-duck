@@ -1,0 +1,1 @@
+{"version":3,"file":"syntax-error.d.ts","sourceRoot":"","sources":["../../../../packages/@glimmer/syntax/lib/syntax-error.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAE3C,MAAM,WAAW,kBAAmB,SAAQ,KAAK;IAC/C,QAAQ,EAAE,UAAU,GAAG,IAAI,CAAC;IAC5B,IAAI,EAAE,MAAM,GAAG,IAAI,CAAC;CACrB;AAED,wBAAgB,mBAAmB,CAAC,OAAO,EAAE,MAAM,EAAE,QAAQ,EAAE,UAAU,GAAG,kBAAkB,CAgB7F"}

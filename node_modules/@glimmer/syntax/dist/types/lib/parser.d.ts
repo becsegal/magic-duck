@@ -1,0 +1,94 @@
+import { Option } from '@glimmer/interfaces';
+import { EntityParser, EventedTokenizer } from 'simple-html-tokenizer';
+import { SourcePosition } from './source/location';
+import { Source } from './source/source';
+import { SourceOffset, SourceSpan } from './source/span';
+import * as ASTv1 from './v1/api';
+import * as HBS from './v1/handlebars-ast';
+export declare type ParserNodeBuilder<N extends {
+    loc: SourceSpan;
+}> = Omit<N, 'loc'> & {
+    loc: SourceOffset;
+};
+export declare type Element = ASTv1.Template | ASTv1.Block | ASTv1.ElementNode;
+export interface Tag<T extends 'StartTag' | 'EndTag'> {
+    readonly type: T;
+    name: string;
+    readonly attributes: ASTv1.AttrNode[];
+    readonly modifiers: ASTv1.ElementModifierStatement[];
+    readonly comments: ASTv1.MustacheCommentStatement[];
+    selfClosing: boolean;
+    readonly loc: SourceSpan;
+}
+export interface Attribute {
+    name: string;
+    currentPart: ASTv1.TextNode | null;
+    parts: (ASTv1.MustacheStatement | ASTv1.TextNode)[];
+    isQuoted: boolean;
+    isDynamic: boolean;
+    start: SourceOffset;
+    valueSpan: SourceSpan;
+}
+export declare abstract class Parser {
+    protected elementStack: Element[];
+    private lines;
+    readonly source: Source;
+    currentAttribute: Option<Attribute>;
+    currentNode: Option<Readonly<ParserNodeBuilder<ASTv1.CommentStatement> | ASTv1.TextNode | ParserNodeBuilder<Tag<'StartTag'>> | ParserNodeBuilder<Tag<'EndTag'>>>>;
+    tokenizer: EventedTokenizer;
+    constructor(source: Source, entityParser?: EntityParser, mode?: 'precompile' | 'codemod');
+    offset(): SourceOffset;
+    pos({ line, column }: SourcePosition): SourceOffset;
+    finish<T extends {
+        loc: SourceSpan;
+    }>(node: ParserNodeBuilder<T>): T;
+    abstract Program(node: HBS.Program): HBS.Output<'Program'>;
+    abstract MustacheStatement(node: HBS.MustacheStatement): HBS.Output<'MustacheStatement'>;
+    abstract Decorator(node: HBS.Decorator): HBS.Output<'Decorator'>;
+    abstract BlockStatement(node: HBS.BlockStatement): HBS.Output<'BlockStatement'>;
+    abstract DecoratorBlock(node: HBS.DecoratorBlock): HBS.Output<'DecoratorBlock'>;
+    abstract PartialStatement(node: HBS.PartialStatement): HBS.Output<'PartialStatement'>;
+    abstract PartialBlockStatement(node: HBS.PartialBlockStatement): HBS.Output<'PartialBlockStatement'>;
+    abstract ContentStatement(node: HBS.ContentStatement): HBS.Output<'ContentStatement'>;
+    abstract CommentStatement(node: HBS.CommentStatement): HBS.Output<'CommentStatement'>;
+    abstract SubExpression(node: HBS.SubExpression): HBS.Output<'SubExpression'>;
+    abstract PathExpression(node: HBS.PathExpression): HBS.Output<'PathExpression'>;
+    abstract StringLiteral(node: HBS.StringLiteral): HBS.Output<'StringLiteral'>;
+    abstract BooleanLiteral(node: HBS.BooleanLiteral): HBS.Output<'BooleanLiteral'>;
+    abstract NumberLiteral(node: HBS.NumberLiteral): HBS.Output<'NumberLiteral'>;
+    abstract UndefinedLiteral(node: HBS.UndefinedLiteral): HBS.Output<'UndefinedLiteral'>;
+    abstract NullLiteral(node: HBS.NullLiteral): HBS.Output<'NullLiteral'>;
+    abstract reset(): void;
+    abstract finishData(): void;
+    abstract tagOpen(): void;
+    abstract beginData(): void;
+    abstract appendToData(char: string): void;
+    abstract beginStartTag(): void;
+    abstract appendToTagName(char: string): void;
+    abstract beginAttribute(): void;
+    abstract appendToAttributeName(char: string): void;
+    abstract beginAttributeValue(quoted: boolean): void;
+    abstract appendToAttributeValue(char: string): void;
+    abstract finishAttributeValue(): void;
+    abstract markTagAsSelfClosing(): void;
+    abstract beginEndTag(): void;
+    abstract finishTag(): void;
+    abstract beginComment(): void;
+    abstract appendToCommentData(char: string): void;
+    abstract finishComment(): void;
+    abstract reportSyntaxError(error: string): void;
+    get currentAttr(): Attribute;
+    get currentTag(): ParserNodeBuilder<Tag<'StartTag' | 'EndTag'>>;
+    get currentStartTag(): ParserNodeBuilder<Tag<'StartTag'>>;
+    get currentEndTag(): ParserNodeBuilder<Tag<'EndTag'>>;
+    get currentComment(): ParserNodeBuilder<ASTv1.CommentStatement>;
+    get currentData(): ASTv1.TextNode;
+    acceptTemplate(node: HBS.Program): ASTv1.Template;
+    acceptNode(node: HBS.Program): ASTv1.Block | ASTv1.Template;
+    acceptNode<U extends HBS.Node | ASTv1.Node>(node: HBS.Node): U;
+    currentElement(): Element;
+    sourceForNode(node: HBS.Node, endNode?: {
+        loc: HBS.SourceLocation;
+    }): string;
+}
+//# sourceMappingURL=parser.d.ts.map

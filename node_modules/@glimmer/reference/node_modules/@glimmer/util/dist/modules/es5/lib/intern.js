@@ -1,0 +1,52 @@
+/**
+  Strongly hint runtimes to intern the provided string.
+
+  When do I need to use this function?
+
+  For the most part, never. Pre-mature optimization is bad, and often the
+  runtime does exactly what you need it to, and more often the trade-off isn't
+  worth it.
+
+  Why?
+
+  Runtimes store strings in at least 2 different representations:
+  Ropes and Symbols (interned strings). The Rope provides a memory efficient
+  data-structure for strings created from concatenation or some other string
+  manipulation like splitting.
+
+  Unfortunately checking equality of different ropes can be quite costly as
+  runtimes must resort to clever string comparison algorithms. These
+  algorithms typically cost in proportion to the length of the string.
+  Luckily, this is where the Symbols (interned strings) shine. As Symbols are
+  unique by their string content, equality checks can be done by pointer
+  comparison.
+
+  How do I know if my string is a rope or symbol?
+
+  Typically (warning general sweeping statement, but truthy in runtimes at
+  present) static strings created as part of the JS source are interned.
+  Strings often used for comparisons can be interned at runtime if some
+  criteria are met.  One of these criteria can be the size of the entire rope.
+  For example, in chrome 38 a rope longer then 12 characters will not
+  intern, nor will segments of that rope.
+
+  Some numbers: http://jsperf.com/eval-vs-keys/8
+
+  Known Trick™
+
+  @private
+  @return {String} interned version of the provided string
+*/
+export default function intern(str) {
+  var obj = {};
+  obj[str] = 1;
+
+  for (var key in obj) {
+    if (key === str) {
+      return key;
+    }
+  }
+
+  return str;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3V0aWwvbGliL2ludGVybi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBdUNBLGVBQWMsU0FBQSxNQUFBLENBQUEsR0FBQSxFQUE0QjtBQUN4QyxNQUFJLEdBQUcsR0FBUCxFQUFBO0FBQ0EsRUFBQSxHQUFHLENBQUgsR0FBRyxDQUFILEdBQUEsQ0FBQTs7QUFDQSxPQUFLLElBQUwsR0FBQSxJQUFBLEdBQUEsRUFBcUI7QUFDbkIsUUFBSSxHQUFHLEtBQVAsR0FBQSxFQUFpQjtBQUNmLGFBQUEsR0FBQTtBQUNEO0FBQ0Y7O0FBQ0QsU0FBQSxHQUFBO0FBQ0QiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAgU3Ryb25nbHkgaGludCBydW50aW1lcyB0byBpbnRlcm4gdGhlIHByb3ZpZGVkIHN0cmluZy5cblxuICBXaGVuIGRvIEkgbmVlZCB0byB1c2UgdGhpcyBmdW5jdGlvbj9cblxuICBGb3IgdGhlIG1vc3QgcGFydCwgbmV2ZXIuIFByZS1tYXR1cmUgb3B0aW1pemF0aW9uIGlzIGJhZCwgYW5kIG9mdGVuIHRoZVxuICBydW50aW1lIGRvZXMgZXhhY3RseSB3aGF0IHlvdSBuZWVkIGl0IHRvLCBhbmQgbW9yZSBvZnRlbiB0aGUgdHJhZGUtb2ZmIGlzbid0XG4gIHdvcnRoIGl0LlxuXG4gIFdoeT9cblxuICBSdW50aW1lcyBzdG9yZSBzdHJpbmdzIGluIGF0IGxlYXN0IDIgZGlmZmVyZW50IHJlcHJlc2VudGF0aW9uczpcbiAgUm9wZXMgYW5kIFN5bWJvbHMgKGludGVybmVkIHN0cmluZ3MpLiBUaGUgUm9wZSBwcm92aWRlcyBhIG1lbW9yeSBlZmZpY2llbnRcbiAgZGF0YS1zdHJ1Y3R1cmUgZm9yIHN0cmluZ3MgY3JlYXRlZCBmcm9tIGNvbmNhdGVuYXRpb24gb3Igc29tZSBvdGhlciBzdHJpbmdcbiAgbWFuaXB1bGF0aW9uIGxpa2Ugc3BsaXR0aW5nLlxuXG4gIFVuZm9ydHVuYXRlbHkgY2hlY2tpbmcgZXF1YWxpdHkgb2YgZGlmZmVyZW50IHJvcGVzIGNhbiBiZSBxdWl0ZSBjb3N0bHkgYXNcbiAgcnVudGltZXMgbXVzdCByZXNvcnQgdG8gY2xldmVyIHN0cmluZyBjb21wYXJpc29uIGFsZ29yaXRobXMuIFRoZXNlXG4gIGFsZ29yaXRobXMgdHlwaWNhbGx5IGNvc3QgaW4gcHJvcG9ydGlvbiB0byB0aGUgbGVuZ3RoIG9mIHRoZSBzdHJpbmcuXG4gIEx1Y2tpbHksIHRoaXMgaXMgd2hlcmUgdGhlIFN5bWJvbHMgKGludGVybmVkIHN0cmluZ3MpIHNoaW5lLiBBcyBTeW1ib2xzIGFyZVxuICB1bmlxdWUgYnkgdGhlaXIgc3RyaW5nIGNvbnRlbnQsIGVxdWFsaXR5IGNoZWNrcyBjYW4gYmUgZG9uZSBieSBwb2ludGVyXG4gIGNvbXBhcmlzb24uXG5cbiAgSG93IGRvIEkga25vdyBpZiBteSBzdHJpbmcgaXMgYSByb3BlIG9yIHN5bWJvbD9cblxuICBUeXBpY2FsbHkgKHdhcm5pbmcgZ2VuZXJhbCBzd2VlcGluZyBzdGF0ZW1lbnQsIGJ1dCB0cnV0aHkgaW4gcnVudGltZXMgYXRcbiAgcHJlc2VudCkgc3RhdGljIHN0cmluZ3MgY3JlYXRlZCBhcyBwYXJ0IG9mIHRoZSBKUyBzb3VyY2UgYXJlIGludGVybmVkLlxuICBTdHJpbmdzIG9mdGVuIHVzZWQgZm9yIGNvbXBhcmlzb25zIGNhbiBiZSBpbnRlcm5lZCBhdCBydW50aW1lIGlmIHNvbWVcbiAgY3JpdGVyaWEgYXJlIG1ldC4gIE9uZSBvZiB0aGVzZSBjcml0ZXJpYSBjYW4gYmUgdGhlIHNpemUgb2YgdGhlIGVudGlyZSByb3BlLlxuICBGb3IgZXhhbXBsZSwgaW4gY2hyb21lIDM4IGEgcm9wZSBsb25nZXIgdGhlbiAxMiBjaGFyYWN0ZXJzIHdpbGwgbm90XG4gIGludGVybiwgbm9yIHdpbGwgc2VnbWVudHMgb2YgdGhhdCByb3BlLlxuXG4gIFNvbWUgbnVtYmVyczogaHR0cDovL2pzcGVyZi5jb20vZXZhbC12cy1rZXlzLzhcblxuICBLbm93biBUcmlja+KEolxuXG4gIEBwcml2YXRlXG4gIEByZXR1cm4ge1N0cmluZ30gaW50ZXJuZWQgdmVyc2lvbiBvZiB0aGUgcHJvdmlkZWQgc3RyaW5nXG4qL1xuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gaW50ZXJuKHN0cjogc3RyaW5nKTogc3RyaW5nIHtcbiAgbGV0IG9iajogUmVjb3JkPHN0cmluZywgbnVtYmVyPiA9IHt9O1xuICBvYmpbc3RyXSA9IDE7XG4gIGZvciAobGV0IGtleSBpbiBvYmopIHtcbiAgICBpZiAoa2V5ID09PSBzdHIpIHtcbiAgICAgIHJldHVybiBrZXk7XG4gICAgfVxuICB9XG4gIHJldHVybiBzdHI7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9

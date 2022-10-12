@@ -1,0 +1,1 @@
+{"version":3,"file":"keywords.d.ts","sourceRoot":"","sources":["../../../../packages/@glimmer/syntax/lib/keywords.ts"],"names":[],"mappings":"AAAA,oBAAY,WAAW,GAAG,MAAM,GAAG,UAAU,GAAG,QAAQ,GAAG,OAAO,CAAC;AAEnE,wBAAgB,SAAS,CAAC,IAAI,EAAE,MAAM,GAAG,OAAO,CAE/C;AAED;;;GAGG;AACH,eAAO,MAAM,cAAc,EAAE;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,WAAW,EAAE,CAAA;CAuB1D,CAAC"}

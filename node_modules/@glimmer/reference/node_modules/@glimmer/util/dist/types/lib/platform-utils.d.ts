@@ -1,0 +1,14 @@
+import { Maybe } from '@glimmer/interfaces';
+export declare type Factory<T> = new (...args: unknown[]) => T;
+export declare const HAS_NATIVE_PROXY: boolean;
+export declare const HAS_NATIVE_SYMBOL: boolean;
+export declare function keys<T>(obj: T): Array<keyof T>;
+export declare function unwrap<T>(val: Maybe<T>): T;
+export declare function expect<T>(val: Maybe<T>, message: string): T;
+export declare function unreachable(message?: string): Error;
+export declare function exhausted(value: never): never;
+export declare type Lit = string | number | boolean | undefined | null | void | {};
+export declare const tuple: <T extends Lit[]>(...args: T) => T;
+export declare function enumerableSymbol(key: string): any;
+export declare const symbol: typeof enumerableSymbol;
+//# sourceMappingURL=platform-utils.d.ts.map

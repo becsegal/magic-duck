@@ -1,0 +1,85 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FreeVarReference = exports.LocalVarReference = exports.ArgReference = exports.ThisReference = void 0;
+
+var _node = require("./node");
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+/**
+ * Corresponds to `this` at the head of an expression.
+ */
+var ThisReference = /*#__PURE__*/function (_node$fields) {
+  _inheritsLoose(ThisReference, _node$fields);
+
+  function ThisReference() {
+    return _node$fields.apply(this, arguments) || this;
+  }
+
+  return ThisReference;
+}((0, _node.node)('This').fields());
+/**
+ * Corresponds to `@<ident>` at the beginning of an expression.
+ */
+
+
+exports.ThisReference = ThisReference;
+
+var ArgReference = /*#__PURE__*/function (_node$fields2) {
+  _inheritsLoose(ArgReference, _node$fields2);
+
+  function ArgReference() {
+    return _node$fields2.apply(this, arguments) || this;
+  }
+
+  return ArgReference;
+}((0, _node.node)('Arg').fields());
+/**
+ * Corresponds to `<ident>` at the beginning of an expression, when `<ident>` is in the current
+ * block's scope.
+ */
+
+
+exports.ArgReference = ArgReference;
+
+var LocalVarReference = /*#__PURE__*/function (_node$fields3) {
+  _inheritsLoose(LocalVarReference, _node$fields3);
+
+  function LocalVarReference() {
+    return _node$fields3.apply(this, arguments) || this;
+  }
+
+  return LocalVarReference;
+}((0, _node.node)('Local').fields());
+/**
+ * Corresponds to `<ident>` at the beginning of an expression, when `<ident>` is *not* in the
+ * current block's scope.
+ *
+ * The `resolution: FreeVarResolution` field describes how to resolve the free variable.
+ *
+ * Note: In strict mode, it must always be a variable that is in a concrete JavaScript scope that
+ * the template will be installed into.
+ */
+
+
+exports.LocalVarReference = LocalVarReference;
+
+var FreeVarReference = /*#__PURE__*/function (_node$fields4) {
+  _inheritsLoose(FreeVarReference, _node$fields4);
+
+  function FreeVarReference() {
+    return _node$fields4.apply(this, arguments) || this;
+  }
+
+  return FreeVarReference;
+}((0, _node.node)('Free').fields());
+
+exports.FreeVarReference = FreeVarReference;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BhY2thZ2VzL0BnbGltbWVyL3N5bnRheC9saWIvdjItYS9vYmplY3RzL3JlZnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUNBOzs7Ozs7OztBQUdBOzs7QUFHQSxJQUFNLGFBQU4sR0FBQSxhQUFBLFVBQUEsWUFBQSxFQUFBO0FBQUEsRUFBQSxjQUFBLENBQUEsYUFBQSxFQUFBLFlBQUEsQ0FBQTs7QUFBQSxXQUFBLGFBQUEsR0FBQTtBQUFBLFdBQUEsWUFBQSxDQUFBLEtBQUEsQ0FBQSxJQUFBLEVBQUEsU0FBQSxLQUFBLElBQUE7QUFBQTs7QUFBQSxTQUFBLGFBQUE7QUFBQSxDQUFBLENBQW1DLGdCQUFBLE1BQUEsRUFBbkMsTUFBbUMsRUFBbkMsQ0FBQTtBQUVBOzs7Ozs7O0FBR0EsSUFBTSxZQUFOLEdBQUEsYUFBQSxVQUFBLGFBQUEsRUFBQTtBQUFBLEVBQUEsY0FBQSxDQUFBLFlBQUEsRUFBQSxhQUFBLENBQUE7O0FBQUEsV0FBQSxZQUFBLEdBQUE7QUFBQSxXQUFBLGFBQUEsQ0FBQSxLQUFBLENBQUEsSUFBQSxFQUFBLFNBQUEsS0FBQSxJQUFBO0FBQUE7O0FBQUEsU0FBQSxZQUFBO0FBQUEsQ0FBQSxDQUFrQyxnQkFBQSxLQUFBLEVBQWxDLE1BQWtDLEVBQWxDLENBQUE7QUFFQTs7Ozs7Ozs7QUFJQSxJQUFNLGlCQUFOLEdBQUEsYUFBQSxVQUFBLGFBQUEsRUFBQTtBQUFBLEVBQUEsY0FBQSxDQUFBLGlCQUFBLEVBQUEsYUFBQSxDQUFBOztBQUFBLFdBQUEsaUJBQUEsR0FBQTtBQUFBLFdBQUEsYUFBQSxDQUFBLEtBQUEsQ0FBQSxJQUFBLEVBQUEsU0FBQSxLQUFBLElBQUE7QUFBQTs7QUFBQSxTQUFBLGlCQUFBO0FBQUEsQ0FBQSxDQUF1QyxnQkFBQSxPQUFBLEVBQXZDLE1BQXVDLEVBQXZDLENBQUE7QUFNQTs7Ozs7Ozs7Ozs7OztBQVNBLElBQU0sZ0JBQU4sR0FBQSxhQUFBLFVBQUEsYUFBQSxFQUFBO0FBQUEsRUFBQSxjQUFBLENBQUEsZ0JBQUEsRUFBQSxhQUFBLENBQUE7O0FBQUEsV0FBQSxnQkFBQSxHQUFBO0FBQUEsV0FBQSxhQUFBLENBQUEsS0FBQSxDQUFBLElBQUEsRUFBQSxTQUFBLEtBQUEsSUFBQTtBQUFBOztBQUFBLFNBQUEsZ0JBQUE7QUFBQSxDQUFBLENBQXNDLGdCQUFBLE1BQUEsRUFBdEMsTUFBc0MsRUFBdEMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFNvdXJjZVNsaWNlIH0gZnJvbSAnLi4vLi4vc291cmNlL3NsaWNlJztcbmltcG9ydCB7IG5vZGUgfSBmcm9tICcuL25vZGUnO1xuaW1wb3J0IHR5cGUgeyBGcmVlVmFyUmVzb2x1dGlvbiB9IGZyb20gJy4vcmVzb2x1dGlvbic7XG5cbi8qKlxuICogQ29ycmVzcG9uZHMgdG8gYHRoaXNgIGF0IHRoZSBoZWFkIG9mIGFuIGV4cHJlc3Npb24uXG4gKi9cbmV4cG9ydCBjbGFzcyBUaGlzUmVmZXJlbmNlIGV4dGVuZHMgbm9kZSgnVGhpcycpLmZpZWxkcygpIHt9XG5cbi8qKlxuICogQ29ycmVzcG9uZHMgdG8gYEA8aWRlbnQ+YCBhdCB0aGUgYmVnaW5uaW5nIG9mIGFuIGV4cHJlc3Npb24uXG4gKi9cbmV4cG9ydCBjbGFzcyBBcmdSZWZlcmVuY2UgZXh0ZW5kcyBub2RlKCdBcmcnKS5maWVsZHM8eyBuYW1lOiBTb3VyY2VTbGljZTsgc3ltYm9sOiBudW1iZXIgfT4oKSB7fVxuXG4vKipcbiAqIENvcnJlc3BvbmRzIHRvIGA8aWRlbnQ+YCBhdCB0aGUgYmVnaW5uaW5nIG9mIGFuIGV4cHJlc3Npb24sIHdoZW4gYDxpZGVudD5gIGlzIGluIHRoZSBjdXJyZW50XG4gKiBibG9jaydzIHNjb3BlLlxuICovXG5leHBvcnQgY2xhc3MgTG9jYWxWYXJSZWZlcmVuY2UgZXh0ZW5kcyBub2RlKCdMb2NhbCcpLmZpZWxkczx7XG4gIG5hbWU6IHN0cmluZztcbiAgaXNUZW1wbGF0ZUxvY2FsOiBib29sZWFuO1xuICBzeW1ib2w6IG51bWJlcjtcbn0+KCkge31cblxuLyoqXG4gKiBDb3JyZXNwb25kcyB0byBgPGlkZW50PmAgYXQgdGhlIGJlZ2lubmluZyBvZiBhbiBleHByZXNzaW9uLCB3aGVuIGA8aWRlbnQ+YCBpcyAqbm90KiBpbiB0aGVcbiAqIGN1cnJlbnQgYmxvY2sncyBzY29wZS5cbiAqXG4gKiBUaGUgYHJlc29sdXRpb246IEZyZWVWYXJSZXNvbHV0aW9uYCBmaWVsZCBkZXNjcmliZXMgaG93IHRvIHJlc29sdmUgdGhlIGZyZWUgdmFyaWFibGUuXG4gKlxuICogTm90ZTogSW4gc3RyaWN0IG1vZGUsIGl0IG11c3QgYWx3YXlzIGJlIGEgdmFyaWFibGUgdGhhdCBpcyBpbiBhIGNvbmNyZXRlIEphdmFTY3JpcHQgc2NvcGUgdGhhdFxuICogdGhlIHRlbXBsYXRlIHdpbGwgYmUgaW5zdGFsbGVkIGludG8uXG4gKi9cbmV4cG9ydCBjbGFzcyBGcmVlVmFyUmVmZXJlbmNlIGV4dGVuZHMgbm9kZSgnRnJlZScpLmZpZWxkczx7XG4gIG5hbWU6IHN0cmluZztcbiAgcmVzb2x1dGlvbjogRnJlZVZhclJlc29sdXRpb247XG4gIHN5bWJvbDogbnVtYmVyO1xufT4oKSB7fVxuXG5leHBvcnQgdHlwZSBWYXJpYWJsZVJlZmVyZW5jZSA9IFRoaXNSZWZlcmVuY2UgfCBBcmdSZWZlcmVuY2UgfCBMb2NhbFZhclJlZmVyZW5jZSB8IEZyZWVWYXJSZWZlcmVuY2U7XG4iXSwic291cmNlUm9vdCI6IiJ9

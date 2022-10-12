@@ -1,0 +1,12 @@
+import type { NodePath } from '@babel/traverse';
+import type * as t from '@babel/types';
+declare type BabelTypes = typeof t;
+export declare class ImportUtil {
+    private t;
+    private program;
+    constructor(t: BabelTypes, program: NodePath<t.Program>);
+    removeImport(moduleSpecifier: string, exportedName: string): void;
+    import(target: NodePath<t.Node>, moduleSpecifier: string, exportedName: string, nameHint?: string): t.Identifier;
+    private addSpecifier;
+}
+export {};
